@@ -63,6 +63,25 @@ class BodyReader {
                     // TODO: what does the spec say should happen in this case?
                 }
             }
+        }              else{
+            String line = LineReader.readLine(inStream)
+            log.debug("Content-length not specified!")
+            int length = Integer.parseInt(line,16) //converts hex to int
+            bindata = new byte[length]
+
+            if (length > 0) {
+                bindata = new byte[length]
+                int i;
+                def count = 0
+                log.debug("  starting to read body")
+                for (i = 0; i < length; i++) {
+                    int ii = inStream.read()
+                    log.debug("   [${i}] = ${ii}")
+                    byte bb = (byte)ii
+                    bindata[i] = bb
+                    count++;
+                }
+            }
         }
         //    elif False:
         //        # multipart/byteranges ?

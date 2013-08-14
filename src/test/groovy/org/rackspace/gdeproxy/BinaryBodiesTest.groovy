@@ -73,6 +73,7 @@ class BinaryBodiesTest {
         assertEquals("application/octet-stream", mc.handlings[0].request.headers["Content-Type"])
     }
 
+    @Ignore
     @Test
     void testNoDefaultRequestHeadersForBinaryBody() {
         byte[] body = (-128 .. 127) as byte[]

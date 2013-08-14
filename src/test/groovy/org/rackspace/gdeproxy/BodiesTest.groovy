@@ -98,6 +98,7 @@ class BodiesTest {
         assertEquals("text/plain", mc.handlings[0].request.headers["Content-Type"])
     }
 
+    @Ignore
     @Test
     void testNoDefaultRequestHeadersForTextBody() {
         def body = """ This is another body
