@@ -142,7 +142,6 @@ class BodiesTest {
 
     // this one doesn't work correctly, because we don't have a reliable way
     // to turn of default response headers
-    @Ignore
     @Test
     void testNoDefaultResponseHeadersForBinaryBody() {
         def body = """ This is another body
